@@ -1,0 +1,11 @@
+{
+  "name": "angularfireapp",
+  "version": "0.1.0",
+  "description": "An AngularFire app example for testing",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angularfire": "^2.0.1",
+    "firebase": "^3.0.5",
+    "bootstrap": "^3.3.6"
+  }
+}

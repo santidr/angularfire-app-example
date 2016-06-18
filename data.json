@@ -1,0 +1,17 @@
+{
+    "personas":
+    [
+        {
+            "nombre": "Maria Díaz",
+            "edad": 24,
+            "direccion": "C/#12 Cristo Rey",
+            "email": "mariadiaz@gmail.com"
+        },
+        {
+            "nombre": "Juan López",
+            "edad": 31,
+            "direccion": "C/30 de Marzo, Ens. La Fe",
+            "email": "juan123@gmail.com"
+        }
+    ]
+}
