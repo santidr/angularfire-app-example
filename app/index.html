@@ -36,24 +36,30 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-4 myform">
-                <form ng-submit="agregarNuevo()">
-                    <div class="form-group">
-                        <label for="inputNombre">Nombre:</label>
-                        <input type="text" class="form-control" id="inputName" ng-model="nombrePersona">
+                <form ng-submit="agregarNuevo()" name="perForm" id="perForm">
+                    <div class="form-group" ng-class="{'has-error': perForm.nombre.$error.required &&
+                        !perForm.nombre.$pristine, 'has-success': perForm.nombre.$valid}">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" ng-class="has-error" name="nombre" ng-model="nombrePersona" required
+                                >
                     </div>
-                    <div class="form-group">
-                        <label for="inputEdad">Edad:</label>
-                        <input type="text" class="form-control" id="inputEdad" ng-model="edadPersona">
+                    <div class="form-group" ng-class="{'has-error': perForm.edad.$error.required &&
+                        !perForm.edad.$pristine, 'has-success': perForm.edad.$valid}">
+                        <label for="edad">Edad:</label>
+                        <input type="number" class="form-control" name="edad" ng-model="edadPersona" required>
                     </div>
-                    <div class="form-group">
-                        <label for="inputDireccion">Dirección:</label>
-                        <input type="text" class="form-control" id="inputDireccion" ng-model="direccionPersona">
+                    <div class="form-group" ng-class="{'has-error': perForm.direccion.$error.required &&
+                        !perForm.direccion.$pristine, 'has-success': perForm.direccion.$valid}">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" class="form-control" name="direccion" ng-model="direccionPersona" required>
                     </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Email:</label>
-                        <input type="text" class="form-control" id="inputEmail" ng-model="emailPersona">
+                    <div class="form-group" ng-class="{'has-error': perForm.email.$error.required &&
+                        !perForm.email.$pristine, 'has-success': perForm.email.$valid}">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" ng-model="emailPersona" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <input type="submit" class="btn btn-default" value="Enviar" ng-disabled="perForm.$invalid"
+                            ng-class="{'btn-primary': perForm.$valid}">
                 </form>
             </div>
             <div class="col-xs-12 col-md-8">

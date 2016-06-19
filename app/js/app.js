@@ -10,10 +10,7 @@
             $scope.personas = $firebaseArray(ref);
 
             function limpiarForm() {
-                $scope.nombrePersona = "";
-                $scope.edadPersona = "";
-                $scope.direccionPersona = "";
-                $scope.emailPersona = "";
+                document.getElementById('perForm').reset();
             }
 
             $scope.agregarNuevo = function() {
