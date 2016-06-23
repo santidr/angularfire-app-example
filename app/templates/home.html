@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-xs-12 col-md-4 myform">
+        <form ng-submit="agregarNuevo()" name="perForm" id="perForm">
+            <div class="form-group" ng-class="{'has-error': perForm.nombre.$error.required &&
+                !perForm.nombre.$pristine, 'has-success': perForm.nombre.$valid}">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" ng-class="has-error" name="nombre" ng-model="nombrePersona" required
+                        >
+            </div>
+            <div class="form-group" ng-class="{'has-error': perForm.edad.$error.required &&
+                !perForm.edad.$pristine, 'has-success': perForm.edad.$valid}">
+                <label for="edad">Edad:</label>
+                <input type="number" class="form-control" name="edad" ng-model="edadPersona" required>
+            </div>
+            <div class="form-group" ng-class="{'has-error': perForm.direccion.$error.required &&
+                !perForm.direccion.$pristine, 'has-success': perForm.direccion.$valid}">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" name="direccion" ng-model="direccionPersona" required>
+            </div>
+            <div class="form-group" ng-class="{'has-error': perForm.email.$error.required &&
+                !perForm.email.$pristine, 'has-success': perForm.email.$valid}">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" ng-model="emailPersona" required>
+            </div>
+            <input type="submit" class="btn btn-default" value="Enviar" ng-disabled="perForm.$invalid"
+                    ng-class="{'btn-primary': perForm.$valid}">
+        </form>
+    </div>
+    <div class="col-xs-12 col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Dirección</th>
+                <th>Email</th>
+                <th>Acción</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in personas">
+                    <td>{{ p.nombre }}</td>
+                    <td>{{ p.edad }}</td>
+                    <td>{{ p.direccion }}</td>
+                    <td>{{ p.email }}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="eliminar(p)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
